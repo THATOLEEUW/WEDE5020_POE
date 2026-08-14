@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Dashboard - Internal Control</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">LOGO <span class="badge">ADMIN</span></div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="check-out.html">Checkout</a></li>
+                    <li><a href="contact.html">Contact</a></li>      
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Page Header & Store Status Control -->
+        <section class="admin-top-bar">
+            <div>
+                <h2>Internal Staff Management</h2>
+                <p>Manage real-time inventory, pricing, and live ordering status.</p>
+            </div>
+            
+            <!-- Store Status Toggle -->
+            <div class="store-control-card">
+                <div class="status-indicator">
+                    <span>Store Status:</span>
+                    <span id="store-status-text" class="status-badge open">OPEN FOR ORDERS</span>
+                </div>
+                <button id="toggle-store-btn" class="btn store-btn">Pause Online Ordering</button>
+            </div>
+        </section>
+
+        <!-- Main Admin Sections -->
+        <main class="admin-content">
+            
+            <!-- Stock & Price Management Table -->
+            <section class="admin-section">
+                <h3>Real-Time Menu & Stock Control</h3>
+                <div class="table-container">
+                    <table class="menu-table">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Category</th>
+                                <th>Current Price (ZAR)</th>
+                                <th>In-Stock Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="menu-items-body">
+                            <!-- Item Row 1 -->
+                            <tr data-id="1">
+                                <td><strong>Gourmet Burger</strong></td>
+                                <td>Burgers</td>
+                                <td>
+                                    <span class="price-display">R96.00</span>
+                                    <input type="number" class="price-input" value="96.00" step="0.50" style="display:none;">
+                                </td>
+                                <td>
+                                    <span class="stock-badge available">In Stock</span>
+                                </td>
+                                <td class="action-cells">
+                                    <button class="btn toggle-stock-btn">Toggle Out of Stock</button>
+                                    <button class="btn edit-price-btn">Edit Price</button>
+                                    <button class="btn save-price-btn" style="display:none;">Save</button>
+                                </td>
+                            </tr>
+
+                            <!-- Item Row 2 -->
+                            <tr data-id="2">
+                                <td><strong>Woodfire Pizza</strong></td>
+                                <td>Pizzas</td>
+                                <td>
+                                    <span class="price-display">R193.00</span>
+                                    <input type="number" class="price-input" value="193.00" step="0.50" style="display:none;">
+                                </td>
+                                <td>
+                                    <span class="stock-badge available">In Stock</span>
+                                </td>
+                                <td class="action-cells">
+                                    <button class="btn toggle-stock-btn">Toggle Out of Stock</button>
+                                    <button class="btn edit-price-btn">Edit Price</button>
+                                    <button class="btn save-price-btn" style="display:none;">Save</button>
+                                </td>
+                            </tr>
+
+                            <!-- Item Row 3 -->
+                            <tr data-id="3">
+                                <td><strong>Loaded Chips</strong></td>
+                                <td>Sides</td>
+                                <td>
+                                    <span class="price-display">R41.00</span>
+                                    <input type="number" class="price-input" value="41.00" step="0.50" style="display:none;">
+                                </td>
+                                <td>
+                                    <span class="stock-badge unavailable">Out of Stock</span>
+                                </td>
+                                <td class="action-cells">
+                                    <button class="btn toggle-stock-btn">Toggle In Stock</button>
+                                    <button class="btn edit-price-btn">Edit Price</button>
+                                    <button class="btn save-price-btn" style="display:none;">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <a href="#">System Logs</a>
+            <span>|</span>
+            <a href="#">Staff Account</a>
+            <span>|</span>
+            <a href="#">Terms & conditions</a>
+            <span>|</span>
+            <a href="#">CopyRight</a>
+        </footer>
+    </div>
+</body>
+</html>

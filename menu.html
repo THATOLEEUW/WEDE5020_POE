@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menu & Customization</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">Chillax
+                 <a href="home.html">
+                <!-- <img src="Images/logo.png" alt="Chillax Logo" class="logo-img"> -->
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="check-out.html">Check Out</a></li>
+                    <li><a href="contact.html">Contact</a></li>      
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Search & Filter Bar -->
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search menu items (e.g., Burger, Pizza)...">
+                <button class="btn">Search</button>
+            </div>
+            <div class="categories">
+                <button class="category-btn active">All</button>
+                <button class="category-btn">Burgers</button>
+                <button class="category-btn">Pizzas</button>
+                <button class="category-btn">Sides & Drinks</button>
+            </div>
+        </section>
+
+        <!-- Main Content Area: Menu Grid + Cart/Customizer Sidebar -->
+        <div class="menu-layout">
+            
+            <!-- Left Side: Menu Items Grid -->
+            <main class="menu-grid">
+                
+                <!-- Item Card 1 -->
+                <div class="menu-card">
+                    <img src="Images/Burgers/susan-lu4esm-burger-7690927_1920.jpg" alt="Gourmet Burger" class="menu-card-img">
+                    <div class="menu-card-details">
+                        <div class="menu-card-title">
+                            <h3>Chief Burger</h3>
+                            <span class="price">R96.00</span>
+                        </div>
+                        <p class="description">100% Beef patty with cheddar, lettuce, and secret sauce.</p>
+                        <button class="btn add-btn">Customize & Add</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 2 -->
+                <div class="menu-card">
+                    <img src="Images/" alt="Woodfire Pizza" class="menu-card-img">
+                    <div class="menu-card-details">
+                        <div class="menu-card-title">
+                            <h3>Woodfire Pizza</h3>
+                            <span class="price">R193.00</span>
+                        </div>
+                        <p class="description">Classic Margherita with fresh mozzarella and basil.</p>
+                        <button class="btn add-btn">Customize & Add</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 3 -->
+                <div class="menu-card">
+                    <img src="Images/Burgers/charlvera-hamburger-7422976_1920.jpg" alt="Loaded Chips" class="menu-card-img">
+                    <div class="menu-card-details">
+                        <div class="menu-card-title">
+                            <h3>Loaded Chips</h3>
+                            <span class="price">R41.00</span>
+                        </div>
+                        <p class="description">Crispy fries topped with melted cheese and jalapenos.</p>
+                        <button class="btn add-btn">Customize & Add</button>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- Right Side: Item Customizer & Cart Builder -->
+            <aside class="sidebar">
+                
+                <!-- Section A: Side Customization Box -->
+                <div class="sidebar-box customize-box">
+                    <h3>Customize Item</h3>
+                    <p class="selected-item-name">Selected: <strong>Chief Burger</strong></p>
+                    
+                    <form class="customization-options">
+                        <label class="section-label">Choose Sides (+R15.00 each):</label>
+                        <div class="option-group">
+                            <label><input type="checkbox" name="side" value="fries"> French Fries</label>
+                            <label><input type="checkbox" name="side" value="onion-rings"> Onion Rings</label>
+                            <label><input type="checkbox" name="side" value="salad"> Side Salad</label>
+                        </div>
+
+                        <label class="section-label">Extra Toppings:</label>
+                        <div class="option-group">
+                            <label><input type="checkbox" name="topping" value="bacon"> Extra Bacon (+R12)</label>
+                            <label><input type="checkbox" name="topping" value="cheese"> Extra Cheese (+R8)</label>
+                        </div>
+
+                        <button type="button" class="btn primary-btn">Add to Cart</button>
+                    </form>
+                </div>
+
+                <!-- Section B: Cart Builder -->
+                <div class="sidebar-box cart-box">
+                    <h3>Your Order Cart</h3>
+                    
+                    <ul class="cart-items">
+                        <li class="cart-item">
+                            <div>
+                                <span class="item-title">1x Chief Burger</span>
+                                <small>Sides: French Fries, Extra Bacon</small>
+                            </div>
+                            <span class="item-price">R123.00</span>
+                        </li>
+                        <li class="cart-item">
+                            <div>
+                                <span class="item-title">1x Loaded Chips</span>
+                                <small>Sides: None</small>
+                            </div>
+                            <span class="item-price">R41.00</span>
+                        </li>
+                    </ul>
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span>R164.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span>R164.00</span>
+                        </div>
+                        <button class="btn checkout-btn">Proceed to Checkout</button>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <a href="#">Hours</a>
+            <span>|</span>
+            <a href="#">Location & Map</a>
+            <span>|</span>
+            <a href="#">Terms & conditions</a>
+            <span>|</span>
+            <a href="#">CopyRight</a>
+        </footer>
+    </div>
+
+</body>
+</html>

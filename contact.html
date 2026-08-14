@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us & Directions</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">Chillax
+                <a href="home.html">
+                <!-- <img src="Images/logo.png" alt="Chillax Logo" class="logo-img"> -->
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about-us.html">About us</a></li>
+                    <li><a href="check-out.html">Check Out</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Page Hero Banner -->
+        <section class="contact-hero">
+            <h2>Get In Touch & Visit Us</h2>
+            <p>Have questions, feedback, or catering inquiries? Drop us a line or navigate to our restaurant.</p>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="contact-layout">
+            
+            <!-- Left Side: One-Tap Directions & Direct Info -->
+            <aside class="contact-info-panel">
+                
+                <!-- One-Tap Driving Directions Card -->
+                <div class="info-card directions-card">
+                    <h3>Find Our Location</h3>
+                    <p class="address-text">O.R Tambo st, CBD, Klerksdorp, 2571</p>
+
+                    <!-- One Tap Navigation Button -->
+                    <a href="O.R. Tambo St, CBD, Klerksdorp, 2570"
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn directions-btn">
+                        One-Tap Driving Directions
+                    </a>
+                    <small class="hint-text">Opens live navigation directly in Google Maps</small>
+                </div>
+
+                <!-- Direct Contact Details -->
+                <div class="info-card">
+                    <h3>Direct Contact</h3>
+                    <ul class="contact-list">
+                        <li><strong>Phone / WhatsApp:</strong> +27 82 000 0000</li>
+                        <li><strong>Email:</strong> info@chillax.co.za</li>
+                        <li><strong>Trading Hours:</strong> Mon - sat: 10:00 AM - 17:00 PM</li>
+                    </ul>
+                </div>
+
+            </aside>
+
+            <!-- Right Side: Interactive Enquiry Form -->
+            <main class="enquiry-panel">
+                <form id="enquiry-form" class="enquiry-form">
+                    <h3>Send Us an Enquiry</h3>
+
+                    <div class="input-field">
+                        <label for="enquiry-name">Full Name *</label>
+                        <input type="text" id="enquiry-name" placeholder="enter full name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="enquiry-email">Email Address *</label>
+                        <input type="email" id="enquiry-email" placeholder="enter@example.com" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="enquiry-phone">Phone Number (Optional)</label>
+                        <input type="tel" id="enquiry-phone" placeholder="072 893 4437">
+                    </div>
+
+                    <div class="input-field">
+                        <label for="enquiry-subject">Enquiry Subject *</label>
+                        <select id="enquiry-subject" required>
+                            <option value="" disabled selected>Select a subject...</option>
+                            <option value="General Query">General Query</option>
+                            <option value="Table Reservation">Table Reservation</option>
+                            <option value="Catering & Events">Catering & Events</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="enquiry-message">Your Message *</label>
+                        <textarea id="enquiry-message" rows="5" placeholder="Write your message or question here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn">Submit Enquiry</button>
+                    
+                    <!-- Confirmation Message Container -->
+                    <div id="form-response" class="form-response" style="display: none;"></div>
+                </form>
+            </main>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <a href="#">Hours</a>
+            <span>|</span>
+            <a href="#">Location & Map</a>
+            <span>|</span>
+            <a href="#">Terms & conditions</a>
+            <span>|</span>
+            <a href="#">CopyRight</a>
+        </footer>
+    </div>
+</body>
+</html>

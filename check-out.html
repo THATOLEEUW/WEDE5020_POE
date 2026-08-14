@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Checkout - Place Order</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">LOGO</div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="check-out.html" class="active">Check Out</a></li>
+                    <li><a href="contact.html">Contact</a></li>      
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Page Header -->
+        <section class="checkout-header">
+            <h2>Complete Your Order</h2>
+            <p>Select your order method and submit via WhatsApp for fast processing.</p>
+        </section>
+
+        <!-- Main Checkout Layout -->
+        <div class="checkout-layout">
+            
+            <!-- Left Side: Order & Delivery Form -->
+            <form id="whatsapp-order-form" class="checkout-form">
+                
+                <!-- Step 1: Order Method -->
+                <div class="form-section">
+                    <h3>1. Select Delivery Method</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="orderType" value="Delivery" checked id="delivery-radio">
+                            <span> Delivery</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="orderType" value="Collection" id="collection-radio">
+                            <span>Collection / Takeaway</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 2: Customer Contact Info -->
+                <div class="form-section">
+                    <h3>2. Contact Details</h3>
+                    <div class="input-field">
+                        <label for="customer-name">Full Name *</label>
+                        <input type="text" id="customer-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="customer-phone">Phone Number *</label>
+                        <input type="tel" id="customer-phone" placeholder="082 123 4567" required>
+                    </div>
+                </div>
+
+                <!-- Step 3: Address -->
+                <div class="form-section" id="address-section">
+                    <h3>3. Delivery Address</h3>
+                    <div class="input-field">
+                        <label for="delivery-address">Street Address & Suburb *</label>
+                        <input type="text" id="delivery-address" placeholder="123 Main Street, Sandton" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="delivery-notes">Delivery Instructions (Optional)</label>
+                        <input type="text" id="delivery-notes" placeholder="Gate code, building name, etc.">
+                    </div>
+                </div>
+
+                <!-- Step 4: Special Request Notes -->
+                <div class="form-section">
+                    <h3>4. Special Instructions</h3>
+                    <div class="input-field">
+                        <textarea id="order-notes" rows="3" placeholder="e.g. Extra napkins, sauce on the side..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn whatsapp-submit-btn">
+                     Place Order via WhatsApp
+                </button>
+            </form>
+
+            <!-- Right Side: Order Summary -->
+            <aside class="order-summary-box">
+                <h3>Order Summary</h3>
+                
+                <ul class="summary-items">
+                    <li class="summary-item">
+                        <div>
+                            <strong>1x Gourmet Burger</strong>
+                            <small>Sides: French Fries</small>
+                        </div>
+                        <span>R96.00</span>
+                    </li>
+                    <li class="summary-item">
+                        <div>
+                            <strong>1x Woodfire Pizza</strong>
+                            <small>Extra: Cheese</small>
+                        </div>
+                        <span>R193.00</span>
+                    </li>
+                </ul>
+
+                <div class="summary-totals">
+                    <div class="row">
+                        <span>Items Subtotal:</span>
+                        <span>R289.00</span>
+                    </div>
+                    <div class="row" id="delivery-fee-row">
+                        <span>Delivery Fee:</span>
+                        <span>R25.00</span>
+                    </div>
+                    <div class="row grand-total">
+                        <span>Total Due:</span>
+                        <span id="final-price">R314.00</span>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <a href="#">Hours</a>
+            <span>|</span>
+            <a href="#">Location & Map</a>
+            <span>|</span>
+            <a href="#">Terms & conditions</a>
+            <span>|</span>
+            <a href="#">CopyRight</a>
+        </footer>
+    </div>
+</body>
+</html>
