@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chillax Klerksdorp | Menu</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="brand-wrapper" >
+                <a href="home.html">
+                    <img src="Images/logo.png" alt="Chillax Logo" class="logo-img">
+                    <div class="logo-text">Chillax</div>
+                 </a>
+            </div>
+            <button class="menu-toggle" id="mobile-menu-btn">&#9776;</button>
+            <nav id="nav-menu-bar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="check-out.html">Check Out</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="check-out.html" class="cart-btn-nav">Cart: <span id="nav-cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-section">
+        <h2>Our Interactive Menu</h2>
+        <div class="menu-layout">
+            <div>
+                <div class="form-group">
+                    <input type="text" id="search-input" placeholder="Search menu items..." onkeyup="filterMenu()">
+                </div>
+                <div class="card-grid">
+                    <div class="card menu-item-card" data-name="gourmet burger">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Gourmet Burger" class="card-img">
+                        <h3>Gourmet Burger</h3>
+                        <p>100% Beef patty with house basting and fresh lettuce.</p>
+                        <strong>R96.00</strong>
+                        <button class="btn" onclick="addToCart('Gourmet Burger', 96)">Add to Cart</button>
+                    </div>
+                    <div class="card menu-item-card" data-name="woodfire pizza">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Woodfire Pizza" class="card-img">
+                        <h3>Woodfire Pizza</h3>
+                        <p>Hand-crafted base with rich tomato sauce and mozzarella.</p>
+                        <strong>R193.00</strong>
+                        <button class="btn" onclick="addToCart('Woodfire Pizza', 193)">Add to Cart</button>
+                    </div>
+                    <div class="card menu-item-card" data-name="loaded chips fries">
+                        <img src="Images/meal1.jpg" alt="Loaded Chips" class="card-img">
+                        <h3>Loaded Chips</h3>
+                        <p>Generous portion of fresh potato chips with spicy seasoning beef.</p>
+                        <strong>R41.00</strong>
+                        <button class="btn" onclick="addToCart('Loaded Chips', 41)">Add to Cart</button>
+                    </div>
+                    <div class="card menu-item-card" data-name="signature peri chicken">
+                        <img src="Images/wing1.jpg" alt="Full Peri Chicken" class="card-img">
+                        <h3>Full Peri Chicken</h3>
+                        <p>Flame-grilled signature chicken basted in your choice of spice.</p>
+                        <strong>R165.00</strong>
+                        <button class="btn" onclick="addToCart('Full Peri Chicken', 165)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-sidebar">
+                <h3>Your Order Cart</h3>
+                <hr style="margin: 10px 0;">
+                <div id="cart-items-container"></div>
+                <hr style="margin: 10px 0;">
+                <p style="display: flex; justify-content: space-between; font-weight: bold;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">R0.00</span>
+                </p>
+                <a href="check-out.html" class="btn" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav><a href="home.html">Home</a> | <a href="check-out.html">Check out</a> | <a href="contact.html">Hours</a> | <a href="about-us.html">About Us</a></nav>
+        <p>&copy; 2026 Chillax Klerksdorp. All Rights Reserved.</p>
+    </footer>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

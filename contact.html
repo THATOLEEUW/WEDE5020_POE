@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chillax Klerksdorp | Contact</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="brand-wrapper" >
+                <a href="home.html">
+                    <img src="Images/logo.png" alt="Chillax Logo" class="logo-img">
+                    <div class="logo-text">Chillax</div>
+                 </a>
+            </div>           
+            <button class="menu-toggle" id="mobile-menu-btn">&#9776;</button>
+            <nav id="nav-menu-bar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="check-out.html">Check Out</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="check-out.html" class="cart-btn-nav">Cart: <span id="nav-cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-section">
+        <h2>Get In Touch & Visit Us</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <div>
+                <h3>Location & Details</h3>
+                <p><strong>Address:</strong> O.R. Tambo St, CBD, Klerksdorp, 2570</p>
+                <p><strong>Phone:</strong> +27 82 000 0000</p>
+                <p><strong>Email:</strong> info@chillax.co.za</p>
+                <p style="margin-top: 15px;"><strong>Trading Hours:</strong></p>
+                <p>Mon - Sat: 10:00 AM - 20:00 PM<br>Sun: 10:00 AM - 17:00 PM</p>
+            </div>
+            <div>
+                <h3>Send Us an Enquiry</h3>
+                <form onsubmit="alert('Thank you for your inquiry! We will contact you shortly.'); return false;">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="4" required></textarea>
+                    </div>
+                    <button class="btn" type="submit">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav><a href="home.html">Home</a> | <a href="menu.html">Menu</a> | <a href="contact.html">Contact</a> | <a href="about-us.html">About Us</a></nav>
+        <p>&copy; 2026 Chillax Klerksdorp. All Rights Reserved.</p>
+    </footer>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

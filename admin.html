@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chillax Klerksdorp | Admin</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+           <div class="brand-wrapper" >
+                <a href="home.html">
+                    <img src="Images/logo.png" alt="Chillax Logo" class="logo-img">
+                    <div class="logo-text">Chillax</div>
+                 </a>
+            </div>
+            <button class="menu-toggle" id="mobile-menu-btn">&#9776;</button>
+            <nav id="nav-menu-bar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="check-out.html">Check Out</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                    <li><a href="check-out.html" class="cart-btn-nav">Cart: <span id="nav-cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-section">
+        <h2>Internal Staff Management</h2>
+
+        <div class="card" style="margin-bottom: 20px;">
+            <h3>Store Status Control</h3>
+            <p>Current Status: <span class="badge badge-open" id="store-status-badge">OPEN FOR ORDERS</span></p>
+            <button class="btn btn-secondary" onclick="toggleStoreStatus()" style="margin-top: 10px;">Toggle Store Status</button>
+        </div>
+
+        <div class="card">
+            <h3>Real-Time Menu & Stock Control</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--gray-border);">
+                        <th style="padding: 8px;">Item</th>
+                        <th style="padding: 8px;">Price</th>
+                        <th style="padding: 8px;">Status</th>
+                        <th style="padding: 8px;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--gray-border);">
+                        <td style="padding: 8px;">Gourmet Burger</td>
+                        <td style="padding: 8px;">R96.00</td>
+                        <td style="padding: 8px;"><span class="badge badge-open">In Stock</span></td>
+                        <td style="padding: 8px;"><button class="btn" style="padding: 4px 8px; font-size: 0.8rem;" onclick="alert('Status updated!')">Toggle Stock</button></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--gray-border);">
+                        <td style="padding: 8px;">Woodfire Pizza</td>
+                        <td style="padding: 8px;">R193.00</td>
+                        <td style="padding: 8px;"><span class="badge badge-open">In Stock</span></td>
+                        <td style="padding: 8px;"><button class="btn" style="padding: 4px 8px; font-size: 0.8rem;" onclick="alert('Status updated!')">Toggle Stock</button></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">Loaded Chips</td>
+                        <td style="padding: 8px;">R41.00</td>
+                        <td style="padding: 8px;"><span class="badge badge-closed">Out of Stock</span></td>
+                        <td style="padding: 8px;"><button class="btn" style="padding: 4px 8px; font-size: 0.8rem;" onclick="alert('Status updated!')">Toggle Stock</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <nav><a href="home.html">Home</a> | <a href="menu.html">Menu</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></nav>
+        <p>&copy; 2026 Chillax Klerksdorp. All Rights Reserved.</p>
+    </footer>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chillax Klerksdorp | Checkout</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="brand-wrapper" >
+                <a href="home.html">
+                    <img src="Images/logo.png" alt="Chillax Logo" class="logo-img">
+                    <div class="logo-text">Chillax</div>
+                 </a>
+            </div>            <button class="menu-toggle" id="mobile-menu-btn">&#9776;</button>
+            <nav id="nav-menu-bar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="check-out.html" class="active">Check Out</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="check-out.html" class="cart-btn-nav">Cart: <span id="nav-cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-section">
+        <h2>Complete Your Order</h2>
+        <p>Select your fulfillment method and submit your order directly via WhatsApp.</p>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-top: 20px;">
+            <form id="checkout-form" onsubmit="submitWhatsAppOrder(event)">
+                <div class="form-group">
+                    <label>1. Delivery Method</label>
+                    <select id="fulfillment-type" onchange="calculateCheckoutTotal()">
+                        <option value="Collection">Collection (Pickup)</option>
+                        <option value="Delivery">Delivery (+R25.00)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="cust-name" required placeholder="e.g. Thato Leeuw">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="cust-phone" required placeholder="e.g. 0820000000">
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address (If Delivery)</label>
+                    <input type="text" id="cust-address" placeholder="Street name, suburb, Klerksdorp">
+                </div>
+                <div class="form-group">
+                    <label>Special Instructions</label>
+                    <textarea id="cust-notes" rows="3" placeholder="Spice preferences, delivery notes..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="background-color: #25D366; width: 100%; font-size: 1.1rem;">
+                         Place Order via WhatsApp
+                </button>
+            </form>
+
+            <div class="card" style="height: fit-content;">
+                <h3>Order Summary</h3>
+                <div id="checkout-summary-list" style="margin: 15px 0;"></div>
+                <hr>
+                <p style="display: flex; justify-content: space-between; margin-top: 8px;">
+                    <span>Subtotal:</span><span id="summary-subtotal">R0.00</span>
+                </p>
+                <p style="display: flex; justify-content: space-between;">
+                    <span>Delivery Fee:</span><span id="summary-delivery">R0.00</span>
+                </p>
+                <p style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; margin-top: 10px;">
+                    <span>Total Due:</span><span id="summary-total">R0.00</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav><a href="home.html">Home</a> | <a href="menu.html">Menu</a> | <a href="contact.html">Contact</a> | <a href="about-us.html">About Us</a></nav>
+        <p>&copy; 2026 Chillax Klerksdorp. All Rights Reserved.</p>
+    </footer>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>
