@@ -179,17 +179,32 @@ function calculateCheckoutTotal() {
 
 function submitWhatsAppOrder(event) {
     event.preventDefault();
+
+    //  Check if the store is currently open
+    const savedStoreState = localStorage.getItem('isStoreOpen');
+    // If 'isStoreOpen' is explicitly saved as 'false', block orders
+    if (savedStoreState === 'false') {
+        alert('Sorry! Chillax Klerksdorp is currently paused or closed for new orders.');
+        return;
+    }
+
     const cart = getCart();
     if (cart.length === 0) {
         alert('Your cart is empty. Please add items before checking out.');
         return;
     }
 
-    const name = document.getElementById('cust-name').value;
-    const phone = document.getElementById('cust-phone').value;
-    const method = document.getElementById('fulfillment-type').value;
-    const address = document.getElementById('cust-address').value;
-    const notes = document.getElementById('cust-notes').value;
+    const nameInput = document.getElementById('cust-name');
+    const phoneInput = document.getElementById('cust-phone');
+    const methodInput = document.getElementById('fulfillment-type');
+    const addressInput = document.getElementById('cust-address');
+    const notesInput = document.getElementById('cust-notes');
+
+    const name = nameInput.value;
+    const phone = phoneInput.value;
+    const method = methodInput.value;
+    const address = addressInput.value;
+    const notes = notesInput.value;
 
     let itemsText = '';
     let subtotal = 0;
@@ -212,27 +227,142 @@ function submitWhatsAppOrder(event) {
         `*Delivery Fee:* R${deliveryFee}\n` +
         `*Total Due:* R${total}`;
 
+    // Open WhatsApp with order details
     window.open(`https://wa.me/27820000000?text=${encodeURIComponent(message)}`, '_blank');
+
+    // Clear cart and reset form inputs
+    saveCart([]);
+    nameInput.value = '';
+    phoneInput.value = '';
+    if (addressInput) addressInput.value = '';
+    if (notesInput) notesInput.value = '';
+
+    // Update the checkout summary UI
+    if (document.getElementById('checkout-summary-list')) {
+        renderCheckoutSummary();
+    }
 }
 
 // Order Tracker (index.html)
 function trackOrder() {
+    const statusIcon = "\u{1F7E2}";
     const input = document.getElementById('track-input').value;
     const result = document.getElementById('track-result');
     if (input.trim() === '') {
         result.innerText = 'Please enter a valid order number.';
         return;
     }
-    result.innerText = `Order #${input}: [Preparing] 🟢 - Expected ready in 20 mins.`;
+    result.innerText = `Order #${input}: [Preparing] ${statusIcon} - Expected ready in 20 mins.`;
+}
+
+// Enquiry Form Submission (contact.html)
+const form = document.getElementById('enquiryForm');
+const fullName = document.getElementById('fullName');
+const emailAddress = document.getElementById('emailAddress');
+const messageText = document.getElementById('messageText');
+
+const nameMessage = document.getElementById('nameMessage');
+const emailMessage = document.getElementById('emailMessage');
+const textAreaMessage = document.getElementById('textAreaMessage');
+const formSuccessMessage = document.getElementById('formSuccessMessage');
+
+form.addEventListener('submit', function(event) {
+  // Stop the form from submitting automatically
+  event.preventDefault();
+
+  // Reset all previous messages
+  nameMessage.textContent = '';
+  emailMessage.textContent = '';
+  textAreaMessage.textContent = '';
+  formSuccessMessage.textContent = '';
+
+  let isValid = true;
+  const nameValue = fullName.value.trim();
+  const alphabeticPattern = /^[A-Za-z\s]+$/;
+  
+  //  Validate Full Name
+  if (nameValue === '') {
+    nameMessage.textContent = 'Error: Please enter your full name.';
+    isValid = false;
+  } else if (!alphabeticPattern.test(nameValue)) {
+    nameMessage.textContent = 'Error: Please enter a valid full name (letters and spaces only).';
+    isValid = false;
+  }
+
+  //  Validate Email Address
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (emailAddress.value.trim() === '') {
+    emailMessage.textContent = 'Error: Email address cannot be left blank.';
+    isValid = false;
+  } else if (!emailPattern.test(emailAddress.value.trim())) {
+    emailMessage.textContent = 'Error: Please enter a valid email format (e.g., name@example.com).';
+    isValid = false;
+  }
+
+  //  Validate Message Textarea
+  if (messageText.value.trim() === '') {
+    textAreaMessage.textContent = 'Error: Please include a message for your inquiry.';
+    isValid = false;
+  }
+
+  // If everything passes validation, show success message
+  if (isValid) {
+    formSuccessMessage.textContent = 'Thank you for your inquiry! We will contact you shortly.';
+    formSuccessMessage.className = 'success-message';
+    
+    // Clear the form inputs after successful submission
+    form.reset();
+  }
+});
+
+// Admin Item Stock Toggle (admin.html)
+function toggleItemStock(buttonElement) {
+    // Find the table row (<tr>) that contains the clicked button
+    const row = buttonElement.closest('tr');
+    
+    // Find the status badge inside that specific row
+    const badge = row.querySelector('.item-status');
+    
+    if (badge) {
+        // Check current text and flip it
+        if (badge.innerText.trim() === 'In Stock') {
+            badge.innerText = 'Out of Stock';
+            badge.className = 'badge badge-closed item-status';
+        } else {
+            badge.innerText = 'In Stock';
+            badge.className = 'badge badge-open item-status';
+        }
+    }
 }
 
 // Store Status Toggle (admin.html)
-let isStoreOpen = true;
 function toggleStoreStatus() {
+    // Get current state from localStorage (default to true if not set)
+    let isStoreOpen = localStorage.getItem('isStoreOpen') !== 'false';
+    
+    // Flip the state
     isStoreOpen = !isStoreOpen;
+
+    // Save the new state to localStorage
+    localStorage.setItem('isStoreOpen', isStoreOpen);
+
+    // Update the badge display on the admin page
+    updateStoreStatusBadge(isStoreOpen);
+}
+
+function updateStoreStatusBadge(isOpen) {
     const badge = document.getElementById('store-status-badge');
     if (badge) {
-        badge.className = isStoreOpen ? 'badge badge-open' : 'badge badge-closed';
-        badge.innerText = isStoreOpen ? 'OPEN FOR ORDERS' : 'PAUSED / CLOSED';
+        badge.className = isOpen ? 'badge badge-open' : 'badge badge-closed';
+        badge.innerText = isOpen ? 'OPEN FOR ORDERS' : 'PAUSED / CLOSED';
     }
 }
+
+// Runs when the admin page loads to show the correct status badge
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('store-status-badge')) {
+        const savedStoreState = localStorage.getItem('isStoreOpen');
+        const isOpen = savedStoreState !== 'false'; // defaults to true if null
+        updateStoreStatusBadge(isOpen);
+    }
+});

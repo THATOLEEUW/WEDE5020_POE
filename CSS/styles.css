@@ -236,7 +236,8 @@ nav a:hover, nav a.active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   /* cursor: pointer;*/
 }
 
 .card-img {
@@ -245,6 +246,11 @@ nav a:hover, nav a.active {
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 15px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .btn {
@@ -337,4 +343,18 @@ footer nav a { margin: 0 10px; color: var(--gray-border); text-decoration: none;
     .carousel-container { height: 350px; }
     .carousel-overlay h1 { font-size: 2.2rem; }
     .carousel-overlay p { font-size: 1rem; }
+}
+
+/* Success & Error Messages */
+.error-message {
+  color: #da0801;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 4px;
+}
+
+.success-message {
+  color: #09e709;
+  font-size: 0.95rem;
+  font-weight: bold;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chillax Klerksdorp | Contact</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    
 </head>
 <body>
     <header>
@@ -40,23 +41,43 @@
                 <p><strong>Email:</strong> info@chillax.co.za</p>
                 <p style="margin-top: 15px;"><strong>Trading Hours:</strong></p>
                 <p>Mon - Sat: 10:00 AM - 20:00 PM<br>Sun: 10:00 AM - 17:00 PM</p>
+
+                <!-- Interactive Google Maps Embed -->
+                <iframe 
+                    src="https://maps.google.com/maps?q=O.R.+Tambo+St,+CBD,+Klerksdorp,+2570&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="250" 
+                    style="border:0; border-radius: 8px; margin-top: 20px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
             </div>
+
             <div>
                 <h3>Send Us an Enquiry</h3>
-                <form onsubmit="alert('Thank you for your inquiry! We will contact you shortly.'); return false;">
+                <form id= "enquiryForm">
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" required>
+                        <input type="text" id="fullName">
+                        <small id="nameMessage" class="error-message"></small>
                     </div>
+
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" required>
+                        <input type="text" id="emailAddress">
+                        <small id="emailMessage" class="error-message"></small>
                     </div>
+
                     <div class="form-group">
                         <label>Message</label>
-                        <textarea rows="4" required></textarea>
+                        <textarea rows="4" id="messageText"></textarea>
+                        <small id="textAreaMessage" class="error-message"></small>
                     </div>
+
                     <button class="btn" type="submit">Submit Enquiry</button>
+
+                    <!-- Success confirmation msg Container -->
+                    <div id="formSuccessMessage" class="success-message" style="margin-top: 10px;"></div>
                 </form>
             </div>
         </div>

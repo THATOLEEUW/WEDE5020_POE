@@ -36,7 +36,7 @@
         <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-top: 20px;">
             <form id="checkout-form" onsubmit="submitWhatsAppOrder(event)">
                 <div class="form-group">
-                    <label>1. Delivery Method</label>
+                    <label> Delivery Method</label>
                     <select id="fulfillment-type" onchange="calculateCheckoutTotal()">
                         <option value="Collection">Collection (Pickup)</option>
                         <option value="Delivery">Delivery (+R25.00)</option>
@@ -58,7 +58,7 @@
                     <label>Special Instructions</label>
                     <textarea id="cust-notes" rows="3" placeholder="Spice preferences, delivery notes..."></textarea>
                 </div>
-                <button type="submit" class="btn" style="background-color: #25D366; width: 100%; font-size: 1.1rem;">
+                <button type="submit" class="btn" style="background-color: #036a29; width: 100%; font-size: 1.1rem;">
                          Place Order via WhatsApp
                 </button>
             </form>
